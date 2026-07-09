@@ -1,29 +1,269 @@
-% This is a simple sample document.  For more complicated documents take a look in the exercise tab. Note that everything that comes after a % symbol is treated as comment and ignored when the code is compiled.
+% VGUFT — Vacuum Grand Unified Fluid Theory
+% Monograph scaffold (v0.2 draft). Co-authored in the COMPRESSIBLE site framing
+% (vguft.me is canonical; the April incompressible monograph is superseded on
+% this point). Every nontrivial claim carries an explicit status tag. The
+% established physics being borrowed is tagged [SOLID]; the VGUFT identifications
+% are tagged [POSTULATE]; the hard unsolved targets are tagged [OPEN]. Nothing
+% here is taken from the unverified third-party "particle-charges" PDF.
 
-\documentclass{article} % \documentclass{} is the first command in any LaTeX code.  It is used to define what kind of document you are creating such as an article or a book, and begins the document preamble
+\documentclass[11pt]{article}
 
-\usepackage{amsmath} % \usepackage is a command that allows you to add functionality to your LaTeX code
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=RoyalBlue, urlcolor=RoyalBlue, citecolor=RoyalBlue}
 
-\title{Simple Sample} % Sets article title
-\author{My Name} % Sets authors name
-\date{\today} % Sets date for date compiled
+% --- VGUFT epistemic status tags ---------------------------------------------
+\newcommand{\SOLID}{\textcolor{ForestGreen}{\textbf{[SOLID]}}}
+\newcommand{\POSTULATE}{\textcolor{RoyalBlue}{\textbf{[POSTULATE]}}}
+\newcommand{\OPENP}{\textcolor{BurntOrange}{\textbf{[OPEN]}}}
+\newcommand{\SPEC}{\textcolor{Gray}{\textbf{[SPECULATIVE]}}}
 
-% The preamble ends with the command \begin{document}
-\begin{document} % All begin commands must be paired with an end command somewhere
-\maketitle % creates title using information in preamble (title, author, date)
+\title{\textbf{VGUFT --- Vacuum Grand Unified Fluid Theory}\\[4pt]
+       \large A Dynamical Theory of the Superfluid Vacuum}
+\author{Dr.\ Brett Michael Alexander \ (Archmage-Dragon)\\
+        \small The Prompt Wizards --- VGUFT Collaboration, Portland, OR}
+\date{Version 0.2 (working draft) --- \today}
 
-\section{Hello World!} % creates a section
+\begin{document}
+\maketitle
 
-\textbf{Hello World!} Today I am learning \LaTeX. %notice how the command will end at the first non-alphabet charecter such as the . after \LaTeX
-\LaTeX{} is a great program for writing math. I can write in line math such as $a^2+b^2=c^2$ %$ tells LaTexX to compile as math
-. I can also give equations their own space:
-\begin{equation} % Creates an equation environment and is compiled as math
-  \gamma^2+\theta^2=\omega^2
+\begin{abstract}
+VGUFT investigates whether the physical vacuum can be modeled as a
+\textbf{compressible, anisotropic, spin-reactive quantum condensate}, and
+whether the known forces, particles, and constants emerge from its dynamics.
+The medium's transverse (vortical) sector is identified with electromagnetism
+and gauge structure; its longitudinal (compressional) sector --- which exists
+only because the medium has \emph{finite} compressibility --- is identified with
+gravity; and a low-energy acoustic metric supplies relativistic kinematics. The
+stance is \emph{emergent, not contradictory}: the substrate must \emph{recover}
+general relativity and the Standard Model, not abolish them. This draft states
+the governing equations in the compressible framing, borrowing only established
+results (each tagged \SOLID), marks the VGUFT identifications as working
+hypotheses (\POSTULATE), and is explicit about the unsolved targets (\OPENP).
+Adversarial review is welcome; a clean falsification is a successful outcome.
+\end{abstract}
+
+\section{Introduction}
+The defining question is whether a single dynamical medium can underlie both the
+gauge fields and the metric. VGUFT posits one substrate --- a condensate with
+density, flow, and internal spin texture --- and treats electromagnetism,
+gravity, and relativistic kinematics as distinct \emph{limits} of its dynamics
+rather than as independent postulates. The decisive modelling choice, and the
+one that distinguishes the current framing from the earlier incompressible
+draft, is that the medium is \textbf{compressible}: it is the finite
+compressibility that opens a longitudinal channel and therefore a gravitational
+sector at all. The framework borrows established physics for every component it
+uses (Section~\ref{sec:lineage}) and is explicit about what is assumed versus
+what is derived.
+
+\section{The substrate and its order parameter}
+The state of the medium is carried by an order parameter with amplitude, phase,
+and an internal spin direction,
+\begin{equation}
+  \Phi^{A}(\mathbf{x},t) \;=\; \sqrt{\rho(\mathbf{x},t)}\;
+    e^{\,i\theta(\mathbf{x},t)}\, z^{A}(\mathbf{x},t),
+  \qquad z^{\dagger} z = 1 ,
 \end{equation}
-If I do not leave any blank lines \LaTeX{} will continue  this text without making it into a new paragraph.  Notice how there was no indentation in the text after equation (1).
-Also notice how even though I hit enter after that sentence and here $\downarrow$
-\LaTeX{} formats the sentence without any break.  Also   look  how      it   doesn't     matter          how    many  spaces     I put     between       my    words.
+where $\rho$ is the condensate density (amplitude), $\theta$ the phase (flow
+potential), and $z^{A}$ a normalized internal spinor encoding the spin texture.
+The superfluid (irrotational) velocity is
+\begin{equation}
+  \mathbf{v}_s \;=\; \frac{\hbar}{m}\,\nabla\theta .
+\end{equation}
+The identification of this condensate with the physical vacuum is the central
+working hypothesis. \POSTULATE
 
-For a new essay I can leave a blank space in my code.
+\section{Governing dynamics (compressible condensate)}
+\label{sec:dynamics}
+We take the order parameter to obey a Gross--Pitaevskii equation with a
+repulsive self-interaction $g>0$ and possible external/self-consistent potential
+$V$,
+\begin{equation}
+  i\hbar\,\partial_t \psi \;=\;
+    \Big[-\frac{\hbar^{2}}{2m}\nabla^{2} + g\,|\psi|^{2} + V\Big]\psi ,
+  \qquad \psi \equiv \sqrt{\rho}\,e^{i\theta}.
+  \label{eq:GP}
+\end{equation}
+Equation~\eqref{eq:GP} is standard condensate physics. \SOLID\ The Madelung
+transform turns it into compressible quantum hydrodynamics: a continuity
+equation
+\begin{equation}
+  \partial_t \rho + \nabla\!\cdot(\rho\,\mathbf{v}_s) = 0 ,
+  \label{eq:continuity}
+\end{equation}
+and a quantum Euler (Bernoulli) equation
+\begin{equation}
+  m\big(\partial_t \mathbf{v}_s + (\mathbf{v}_s\!\cdot\!\nabla)\mathbf{v}_s\big)
+  \;=\; -\,\nabla\!\big(g\rho + V + Q\big),
+  \qquad
+  Q \equiv -\frac{\hbar^{2}}{2m}\frac{\nabla^{2}\sqrt{\rho}}{\sqrt{\rho}} ,
+  \label{eq:euler}
+\end{equation}
+with $Q$ the quantum potential. \SOLID\ Linearizing
+\eqref{eq:continuity}--\eqref{eq:euler} about a uniform background $\rho_0$ gives
+Bogoliubov sound with speed
+\begin{equation}
+  c_s^{2} \;=\; \frac{g\,\rho_0}{m}
+  \qquad (\text{long-wavelength limit}).
+  \label{eq:sound}
+\end{equation}
+This \emph{finite} $c_s$ is the linchpin of the framing: a strictly
+incompressible medium ($c_s\!\to\!\infty$) has no longitudinal mode and hence no
+gravitational channel (Section~\ref{sec:gravity}). \SOLID\ (established
+hydrodynamics); the reading of \eqref{eq:sound} as the origin of an emergent
+signal speed is \POSTULATE.
 
-\end{document} % This is the end of the document
+\paragraph{Spin texture and an emergent connection.}
+Gradients of the internal spinor define a Mermin--Ho gauge connection
+$a_\mu = -\,i\,z^{\dagger}\partial_\mu z$, and the superfluid vorticity acquires
+the Mermin--Ho term
+\begin{equation}
+  (\nabla\times\mathbf{v}_s)_i
+  \;=\; \frac{\hbar}{2m}\,\epsilon_{ijk}\,
+        \hat{\mathbf{n}}\!\cdot\!(\partial_j\hat{\mathbf{n}}\times\partial_k\hat{\mathbf{n}}),
+  \label{eq:merminho}
+\end{equation}
+i.e.\ vorticity sourced by the skyrmion density of the texture $\hat{\mathbf n}$.
+Relation~\eqref{eq:merminho} is established for spinor superfluids
+($^3$He--A, spinor BECs). \SOLID\ Its identification with a physical gauge field
+is \POSTULATE.
+
+\section{Transverse (vortical) channel: electromagnetism}
+Define the vorticity and the Lamb vector,
+\begin{equation}
+  \boldsymbol{\omega} \equiv \nabla\times\mathbf{v}_s ,
+  \qquad
+  \mathbf{l} \equiv \boldsymbol{\omega}\times\mathbf{v}_s .
+\end{equation}
+In the transverse (effectively incompressible) limit the hydrodynamic equations
+close into a Maxwell-like system under the correspondence
+$\mathbf{B}\leftrightarrow\boldsymbol{\omega}$,
+$\mathbf{E}\leftrightarrow-\mathbf{l}$:
+\begin{align}
+  \nabla\!\cdot\boldsymbol{\omega} &= 0, &
+  \partial_t\boldsymbol{\omega} + \nabla\times\mathbf{l} &= \nu\nabla^{2}\boldsymbol{\omega}, \\
+  \nabla\!\cdot\mathbf{l} &= -\,\partial_t(\nabla\!\cdot\mathbf{v}_s) + s_\rho, &
+  \nabla\times\boldsymbol{\omega} &= \frac{1}{c_s^{2}}\,\partial_t\mathbf{l} + \mathbf{j}_\omega ,
+\end{align}
+where $\nu$ is a kinematic (dissipative) coefficient and $s_\rho,\mathbf{j}_\omega$
+collect compressible/nonlinear source terms. The Navier--Stokes$\,\to\,$Maxwell
+correspondence is a rigorous mathematical fact (Marmanis 1998; Kambe 2010).
+\SOLID\ The identification of physical electromagnetism with this substrate
+sector is \POSTULATE. Circulation is topologically quantized,
+\begin{equation}
+  \Gamma = \oint_{C}\mathbf{v}_s\!\cdot d\boldsymbol{\ell} = n\,\kappa ,
+  \qquad \kappa = \frac{h}{m}, \quad n\in\mathbb{Z},
+\end{equation}
+which is \SOLID\ for superfluids; reading $n$ as the electric-charge quantum is
+\POSTULATE\ (and see Section~\ref{sec:charge}).
+
+\section{Longitudinal (compressional) channel: gravity}
+\label{sec:gravity}
+Small phase perturbations $\theta_1$ on a background flow $(\rho_0,\mathbf{v}_0)$
+obey, directly from \eqref{eq:continuity}--\eqref{eq:euler}, a curved-space wave
+equation
+\begin{equation}
+  \partial_\mu\!\big(\sqrt{-g}\,g^{\mu\nu}\,\partial_\nu\theta_1\big) = 0 ,
+\end{equation}
+with the \emph{acoustic (effective) metric}
+\begin{equation}
+  g_{\mu\nu} \;\propto\; \frac{\rho_0}{c_s}
+  \begin{pmatrix}
+    -\,(c_s^{2}-v_0^{2}) & -\,\mathbf{v}_0^{\top}\\[2pt]
+    -\,\mathbf{v}_0 & \mathbb{1}
+  \end{pmatrix}.
+  \label{eq:acoustic}
+\end{equation}
+The acoustic-metric construction is established analog gravity (Unruh 1981;
+Barcel\'o--Liberati--Visser 2005). \SOLID\ The identification of
+\eqref{eq:acoustic} with the physical gravitational metric is \POSTULATE, and
+the recovery of general-relativistic \emph{precision} tests (Cassini,
+GW170817, perihelion/lensing) from the substrate is \OPENP. The essential point
+is structural: \eqref{eq:acoustic} exists only because $c_s$ is finite
+(Eq.~\eqref{eq:sound}), so gravity in this framework is a consequence of
+compressibility.
+
+\section{Emergent relativity}
+Because low-energy excitations propagate on the metric \eqref{eq:acoustic}, they
+experience an invariant signal speed, effective horizons, and (near suitable
+fixed points) an emergent Lorentz symmetry --- the mechanism demonstrated
+constructively in superfluid $^3$He--A (Volovik 2003). \SOLID\ as an analog
+result; a full derivation of exact Lorentz invariance for the vacuum substrate,
+with the observed precision, is \OPENP. The discipline is absolute: a version
+predicting no time dilation would be falsified by GPS before lunch.
+
+\section{Particles as vortex-knot solitons; electric charge}
+\label{sec:charge}
+Particles are modeled as topological excitations --- knotted vortex solitons of
+the coupled $(\rho,\theta,z^{A})$ fields, in the Faddeev--Niemi/Hopfion class.
+Electric charge is identified with the \textbf{Hopf (linking) invariant} of the
+spin texture,
+\begin{equation}
+  Q_H \;=\; \frac{1}{(4\pi)^{2}}\int \mathbf{A}\!\cdot\!\mathbf{B}\; d^{3}x ,
+  \qquad \mathbf{B}=\nabla\times\mathbf{A},
+\end{equation}
+with $\mathbf{A}$ the connection of the CP$^1$ texture. Knotted Hopfion solitons
+are \SOLID\ (they exist as field configurations); the identification $Q_H\!=\!$
+electric charge is a deliberate \POSTULATE\ --- a repair of an earlier
+charge-from-helicity proposal that contradicted QED --- and deriving the
+observed charge spectrum from it remains \OPENP.
+
+\section{Status and open problems (honest list)}
+\begin{itemize}
+  \item \textbf{Gravity sector} must reproduce GR precision tests
+        (Cassini, GW170817, perihelion/lensing) --- not yet demonstrated. \OPENP
+  \item \textbf{Charge mechanism} --- the Hopf/linking identification is
+        postulated, not derived. \OPENP\ \POSTULATE
+  \item \textbf{Chiral fermions} --- recovering the Standard Model's chiral
+        structure faces the Nielsen--Ninomiya obstruction. \OPENP
+  \item \textbf{Full gauge group} --- recovering $SU(3)\times SU(2)\times U(1)$
+        is not established. \OPENP
+  \item \textbf{Emergent Lorentz invariance} --- motivated by analog-gravity
+        precedent; a full, precision derivation is a target, not a result. \OPENP
+  \item \textbf{Equation of state} --- the map from the microscopic interaction
+        $g$ to the observed constants ($c$, $G$, $e$) is unspecified. \OPENP
+\end{itemize}
+The program will have \emph{earned} the definite article (``\emph{The}
+dynamical theory\ldots'') on the day it produces a confirmed, novel,
+quantitative prediction. Until then it is \emph{a} theory under construction.
+
+\section*{Lineage and borrowed results}
+\label{sec:lineage}
+Every mechanism above is imported from established physics: the condensate
+hydrodynamics (Madelung; Gross--Pitaevskii), vorticity from texture
+(Mermin--Ho), the Navier--Stokes$\to$Maxwell correspondence (Marmanis; Kambe),
+the acoustic/effective metric and analog horizons (Unruh; Barcel\'o--Liberati--
+Visser; Volovik), and knotted solitons (Faddeev--Niemi). VGUFT's content is the
+\emph{claim} that the physical vacuum is one such medium and that these sectors
+are the physical forces --- claims held to falsifiable standard, not asserted as
+settled.
+
+\begin{thebibliography}{9}
+  \bibitem{maxwell1865} J.~C.~Maxwell, \emph{A Dynamical Theory of the
+    Electromagnetic Field}, Phil.\ Trans.\ R.\ Soc.\ Lond.\ \textbf{155} (1865).
+  \bibitem{madelung} E.~Madelung, \emph{Quantentheorie in hydrodynamischer
+    Form}, Z.\ Phys.\ \textbf{40} (1927) 322.
+  \bibitem{gross} E.~P.~Gross, \emph{Structure of a quantized vortex in boson
+    systems}, Nuovo Cimento \textbf{20} (1961) 454;
+    L.~P.~Pitaevskii, Sov.\ Phys.\ JETP \textbf{13} (1961) 451.
+  \bibitem{merminho} N.~D.~Mermin and T.-L.~Ho, \emph{Circulation and Angular
+    Momentum in the $A$ Phase of Superfluid $^3$He}, Phys.\ Rev.\ Lett.\
+    \textbf{36} (1976) 594.
+  \bibitem{marmanis} H.~Marmanis, \emph{Analogy between the Navier--Stokes
+    equations and Maxwell's equations}, Phys.\ Fluids \textbf{10} (1998) 1428.
+  \bibitem{kambe} T.~Kambe, \emph{A new formulation of equations of compressible
+    fluids by analogy with Maxwell's equations}, Fluid Dyn.\ Res.\ \textbf{42}
+    (2010) 055502.
+  \bibitem{unruh} W.~G.~Unruh, \emph{Experimental black-hole evaporation?},
+    Phys.\ Rev.\ Lett.\ \textbf{46} (1981) 1351.
+  \bibitem{blv} C.~Barcel\'o, S.~Liberati, and M.~Visser, \emph{Analogue
+    Gravity}, Living Rev.\ Relativity \textbf{8} (2005) 12.
+  \bibitem{volovik} G.~E.~Volovik, \emph{The Universe in a Helium Droplet},
+    Oxford University Press (2003).
+  \bibitem{faddeevniemi} L.~Faddeev and A.~J.~Niemi, \emph{Stable knot-like
+    structures in classical field theory}, Nature \textbf{387} (1997) 58.
+\end{thebibliography}
+
+\end{document}

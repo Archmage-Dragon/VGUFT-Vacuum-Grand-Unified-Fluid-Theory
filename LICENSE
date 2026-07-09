@@ -1,21 +1,103 @@
-MIT License
+VGUFT — Research Access and Rights Notice
 
-Copyright (c) 2022 Sanjib Kumar Sen
+VGUFT — Vacuum Grand Unified Fluid Theory
+Version 0.1 — First public release: 2026-06-22
+Copyright © 2026 Brett Michael Alexander. All rights reserved except as
+expressly granted below.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+VGUFT — Vacuum Grand Unified Fluid Theory — including its written works,
+diagrams, figures, terminology, software, source code, simulations,
+documentation, datasets, project architecture, and official publications, is
+protected intellectual property except where expressly stated otherwise.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+PLATFORM NOTE
+
+These materials are published in a public repository. By the nature of the
+hosting platform, viewing and forking within that platform are permitted as a
+function of public access and are not waived by this notice. All other rights
+remain reserved as stated below. Forking for the purpose of private study,
+evaluation, or proposed contribution is consistent with this notice;
+redistribution, modification, or commercial use beyond that remains subject to
+the restrictions herein.
+
+
+LIMITED RESEARCH PERMISSION
+
+Permission is granted to access and examine publicly released VGUFT materials
+for personal study, academic evaluation, criticism, commentary, and
+noncommercial research.
+
+Users may:
+
+1. Read and download publicly released materials for personal or internal research.
+2. Cite VGUFT publications using accurate authorship, title, version, and source information.
+3. Quote limited portions where permitted by applicable law.
+4. Conduct private, noncommercial calculations, tests, replications, and evaluations.
+5. Submit proposed corrections, extensions, experiments, code, or documentation through official VGUFT contribution channels.
+
+
+RIGHTS NOT GRANTED
+
+Except where required by applicable law, no permission is granted to:
+
+1. Sell, license, monetize, sublicense, or commercially exploit VGUFT materials.
+2. Republish, mirror, or redistribute complete VGUFT works or substantial portions of them, except as inherent to the hosting platform's own access and fork functionality.
+3. Distribute modified, translated, adapted, or derivative versions of protected VGUFT materials.
+4. Incorporate VGUFT source code, documentation, figures, datasets, or protected expression into another product, service, publication, model, or commercial research program.
+5. Use VGUFT materials for paid products, consulting, commercial training, proprietary software, or revenue-generating services.
+6. Use VGUFT materials as training data, fine-tuning data, retrieval data, or evaluation data for a commercial artificial-intelligence system without written permission.
+7. Remove or alter copyright, attribution, version, provenance, or rights notices.
+8. Use the names "VGUFT," "Vacuum Grand Unified Fluid Theory," associated logos, seals, or project branding in a manner that suggests sponsorship, authorization, affiliation, or official status.
+9. Represent any modification, fork, extension, or interpretation as an official VGUFT publication or approved component.
+10. Grant any third party rights in VGUFT materials.
+
+
+CONTRIBUTIONS
+
+Submission of material does not guarantee acceptance, authorship credit,
+project membership, ownership, or inclusion in an official release.
+
+No contribution will be incorporated into the official VGUFT project until the
+contributor has accepted the applicable Contributor Agreement and the
+contribution has been reviewed and approved by an authorized VGUFT maintainer.
+
+Only releases expressly designated by the VGUFT rights holder or an authorized
+VGUFT governing body are official VGUFT releases.
+
+
+COMMERCIAL AND SPECIAL PERMISSION
+
+Commercial use, redistribution, publication of protected adaptations,
+institutional deployment, and other uses outside the limited research
+permission require a separate written license signed by the VGUFT rights holder.
+
+Permission requests must identify:
+
+- The requesting person or organization.
+- The materials requested.
+- The proposed use.
+- Whether the use is commercial, institutional, governmental, or nonprofit.
+- The intended audience and distribution method.
+- Any expected revenue, funding, compensation, or commercial benefit.
+
+No permission is valid unless granted in a signed written agreement by an
+authorized VGUFT representative.
+
+
+NO PATENT OR TRADEMARK LICENSE
+
+Access to VGUFT materials does not grant any patent, patent-application,
+trademark, trade-secret, publicity, or branding rights.
+
+
+NO OFFICIAL ENDORSEMENT
+
+Discussion, citation, criticism, experimentation, or independent research
+involving VGUFT does not indicate endorsement, membership, authorization, or
+official affiliation with the VGUFT project.
+
+
+RESERVATION OF RIGHTS
+
+All rights not expressly granted in this notice are reserved.
